@@ -12,7 +12,7 @@ function Temp() {
     console.log(m);
     useEffect(() => {
         const Ftapi = async () => {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${val}&appid=af2b5bcf90031de9fe1f921865f29ad2`)
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${val}&appid=af2b5bcf90031de9fe1f921865f29ad2`)
             const resjson = await response.json();
             console.log(resjson.main)
             upTemp(resjson.name)
@@ -54,7 +54,7 @@ function Temp() {
                                         <div className=" overflow-hidden">
                                         <h1 className="mt-5 p-1 overflow-hidden  text-white textshadow font-weight-bold">{Math.round((tem.temp - 273.15)*10)/10}°C</h1>
                                             <h5>Feels like {Math.ceil( tem.temp_min- 273.15)}°C </h5>
-                                            <p class="card-text mt-4 textshadow text-white">Min {Math.trunc(tem.feels_like - 275.15)}°C | Max {Math.ceil(tem.temp_max - 265.15)}°C</p>
+                                            <p class="card-text mt-4 textshadow text-white">Min {Math.trunc(tem.feels_like - 275.15)}°C | Max {Math.ceil(tem.temp_max - 272.15)}°C</p>
                                         </div>
                                         <div class="ocean">
                                             <div class="wave"></div>
